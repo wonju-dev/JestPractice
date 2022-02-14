@@ -1,12 +1,17 @@
 const wait = (callback: (number: number) => void) => {
   setTimeout(() => {
     callback(1);
-  }, 5000);
+  }, 3000);
 };
 
-test("first test", () => {
+test("first test", (done) => {
   function callback(number: number) {
-    expect(number).toEqual(1);
+    try {
+      expect(number).toEqual(1);
+      done();
+    } catch (err) {
+      done();
+    }
   }
 
   wait(callback);
