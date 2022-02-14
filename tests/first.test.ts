@@ -1,7 +1,13 @@
-test("first test", () => {
-  const numbers: number[] = [1, 2, 3, 4, 5];
-  expect(numbers).toContain(1);
+const wait = (callback: (number: number) => void) => {
+  setTimeout(() => {
+    callback(1);
+  }, 5000);
+};
 
-  const numberSet = new Set(numbers);
-  expect(numberSet).toContain(1);
+test("first test", () => {
+  function callback(number: number) {
+    expect(number).toEqual(1);
+  }
+
+  wait(callback);
 });
