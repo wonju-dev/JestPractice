@@ -1,7 +1,7 @@
-test("there is no I in team", () => {
-  expect("team").not.toMatch(/I/); // I가 포함되지 않음
-});
+test("first test", () => {
+  const numbers: number[] = [1, 2, 3, 4, 5];
+  expect(numbers).toContain(1);
 
-test('but there is a "stop" in Christoph', () => {
-  expect("Christoph").toMatch(/stop/); // stop이 포함되지 않음
+  const numberSet = new Set(numbers);
+  expect(numberSet).toContain(1);
 });
